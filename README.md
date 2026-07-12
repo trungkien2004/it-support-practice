@@ -122,15 +122,76 @@ Thực hiện quy trình chuẩn bị phần mềm văn phòng cho máy tính tr
  *Bộ ứng dụng Word, Excel, PowerPoint... đang được tải và cài đặt*
 
 
+### 5. Tạo tài khoản và phân quyền người dùng
+Đây là kỹ năng cốt lõi mà bất kỳ IT Support nào cũng cần thành thạo — cấp tài khoản đúng chuẩn và kiểm soát chặt chẽ quyền truy cập dữ liệu, tránh rủi ro bảo mật khi bàn giao máy cho nhân viên mới:
+- Tạo tài khoản người dùng mới trong Computer Management, đặt mật khẩu và cấu hình yêu cầu đổi mật khẩu ở lần đăng nhập đầu tiên — đảm bảo tuân thủ quy trình bảo mật cơ bản
+- Kiểm tra thực tế bằng cách đăng nhập lại với tài khoản vừa tạo, xác nhận hệ thống hoạt động đúng như thiết kế
+- Thiết lập phân quyền NTFS cho thư mục dùng chung, chỉ cấp quyền Read & Execute — giới hạn đúng mức cần thiết, không cho phép chỉnh sửa/xóa ngoài ý muốn
+- Xử lý tình huống thực tế phức tạp hơn: một thư mục có sẵn nhiều quyền kế thừa từ thư mục cha, cần chủ động ngắt kế thừa (Block Inheritance) để chỉ giữ lại đúng những quyền cần thiết, đảm bảo không ai ngoài phạm vi được phép vẫn truy cập được
+
+![Bước 1](./05-tao-tai-khoan-va-phan-quyen/user1.png)
+*Mở Computer Management để quản lý tài khoản người dùng*
+
+![Bước 2](./05-tao-tai-khoan-va-phan-quyen/user2.png)
+*Khởi tạo hộp thoại New User*
+
+![Bước 3](./05-tao-tai-khoan-va-phan-quyen/user3.png)
+*Điền thông tin tài khoản, đặt mật khẩu và yêu cầu đổi mật khẩu lần đầu đăng nhập*
+
+![Bước 4](./05-tao-tai-khoan-va-phan-quyen/user4.png)
+*Tài khoản "Nhanvien1" đã được tạo thành công trong hệ thống*
+
+![Bước 5](./05-tao-tai-khoan-va-phan-quyen/user5.png)
+*Kiểm tra thực tế: đăng nhập lần đầu bằng tài khoản vừa tạo*
+
+![Bước 6](./05-tao-tai-khoan-va-phan-quyen/user6.png)
+*Kiểm tra quyền hạn ban đầu của thư mục dùng chung*
+
+![Bước 7](./05-tao-tai-khoan-va-phan-quyen/user7.png)
+*Tìm và thêm chính xác tài khoản vào danh sách phân quyền*
+
+![Bước 8](./05-tao-tai-khoan-va-phan-quyen/user8.png)
+*Cấp quyền Read & Execute — giới hạn đúng mức, không cho phép chỉnh sửa*
+
+![Bước 9](./05-tao-tai-khoan-va-phan-quyen/user9.png)
+*Xác minh quyền truy cập ứng dụng bằng tài khoản vừa phân quyền*
+
+![Bước 10](./05-tao-tai-khoan-va-phan-quyen/user10.png)
+*Kiểm tra lại màn hình đăng nhập, đảm bảo tài khoản hoạt động ổn định*
+
+![Bước 11](./05-tao-tai-khoan-va-phan-quyen/user11.png)
+*Xác nhận toàn bộ quy trình đăng nhập diễn ra chính xác*
+
+![Bước 12](./05-tao-tai-khoan-va-phan-quyen/user12.png)
+*Phát hiện thư mục Public Documents có nhiều quyền kế thừa phức tạp cần xử lý*
+
+![Bước 13](./05-tao-tai-khoan-va-phan-quyen/user13.png)
+*Chủ động ngắt kế thừa quyền (Block Inheritance) để kiểm soát chính xác*
+
+![Bước 14](./05-tao-tai-khoan-va-phan-quyen/user14.png)
+*Danh sách quyền sau khi xử lý — chỉ giữ lại đúng những gì cần thiết*
+
+![Bước 15](./05-tao-tai-khoan-va-phan-quyen/user15.png)
+*Kiểm tra lại giao diện và quyền truy cập sau khi cấu hình*
+
+![Bước 16](./05-tao-tai-khoan-va-phan-quyen/user16.png)
+*Xác minh kết quả phân quyền qua File Explorer*
+
+![Bước 17](./05-tao-tai-khoan-va-phan-quyen/user17.png)
+*Xác nhận quyền quản trị (UAC) khi thực hiện thay đổi hệ thống*
+
+
+
+
 ## Kỹ năng đạt được
-- Triển khai và cấu hình máy ảo Windows
-- Cài đặt hệ điều hành, phần mềm văn phòng
-- Cấu hình và chẩn đoán mạng cơ bản
-- Quản trị tài khoản người dùng và phân quyền NTFS
-- Quản lý phân vùng ổ đĩa
-- Giám sát hiệu năng hệ thống
+- Triển khai và cấu hình máy ảo Windows**: Cấu hình tài nguyên (RAM, CPU, ổ cứng) phù hợp với nhu cầu sử dụng, đảm bảo hệ thống vận hành ổn định
+- Quản lý phân vùng ổ đĩa: Sử dụng Disk Management để tách ổ hệ thống và ổ dữ liệu, giảm rủi ro mất dữ liệu khi cần cài lại hệ điều hành
+- Cấu hình và chẩn đoán mạng cơ bản: Xác minh kết nối mạng, địa chỉ IP, gateway bằng CMD (ipconfig), đảm bảo máy sẵn sàng kết nối trước khi bàn giao
+- Cài đặt hệ điều hành và phần mềm văn phòng: Cài đặt Windows, Microsoft Office từ ISO, xử lý toàn bộ quy trình chuẩn bị máy cho người dùng
+- Quản trị tài khoản người dùng và phân quyền NTFS: Tạo tài khoản, cấu hình phân quyền cơ bản và xử lý các tình huống phân quyền nâng cao (kế thừa quyền, bảo mật thư mục dùng chung)
+- Giám sát hiệu năng hệ thống: Sử dụng Resource Monitor, DXDiag để theo dõi và chẩn đoán hiệu năng CPU/RAM/Disk, phát hiện sớm sự cố tiềm ẩn
 
 ---
-*Tác giả: Phạm Trung Kiên — [github.com/trungkien2004](https://github.com/trungkien2004)*
+
 
 
